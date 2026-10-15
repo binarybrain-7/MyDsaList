@@ -1,0 +1,20 @@
+class Solution {
+    public int sumCounts(List<Integer> nums) {
+        int sum = 0;
+        int n = nums.size();
+        
+        // Outer loop for the starting index of the subarray
+        for (int i = 0; i < n; i++) {
+            HashSet<Integer> distinctElements = new HashSet<>();
+            
+            // Inner loop for the ending index of the subarray
+            for (int j = i; j < n; j++) {
+                distinctElements.add(nums.get(j));
+                int count = distinctElements.size();
+                sum += count * count; // Add the square of distinct count
+            }
+        }
+        
+        return sum;
+    }
+}
