@@ -9,7 +9,7 @@ class Solution {
         int ans = 0;
 
         for (int num : nums) {
-            // Option 1: Increment num to (num + 1)
+           
             int incLen = dp.getOrDefault(num, 0) + 1;
             dp.put(num + 1, Math.max(dp.getOrDefault(num + 1, 0), incLen));
             ans = Math.max(ans, dp.get(num + 1));
